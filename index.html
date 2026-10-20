@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="VendorHub helps couples discover wedding vendors, compare services and request bookings.">
+  <title>VendorHub | Wedding Vendor Marketplace</title>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home"><span class="brand-icon">✦</span> Vendor<span>Hub</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
+    <nav id="mainNav">
+      <a href="#home">Home</a><a href="#vendors">Find Vendors</a><a href="#categories">Categories</a>
+      <a href="#bookings">My Bookings</a><a href="#dashboard">Dashboard</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">☾</button>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow">MAKE YOUR DAY UNFORGETTABLE</p>
+        <h1>Your dream wedding<br><span>starts with the right team.</span></h1>
+        <p class="hero-copy">Discover trusted venues, photographers, caterers and wedding professionals — all in one place.</p>
+        <div class="hero-search">
+          <label class="sr-only" for="heroSearch">Search vendors</label>
+          <input id="heroSearch" type="search" placeholder="Try photographer, venue, makeup...">
+          <button id="heroSearchBtn" class="btn primary">Find Vendors ↗</button>
+        </div>
+        <div class="hero-trust"><span>★★★★★</span> Loved by couples planning their big day</div>
+      </div>
+      <div class="hero-art">
+        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=85" alt="Elegant wedding ceremony setup">
+        <div class="floating-card"><span class="floating-icon">♡</span><div><strong>Plan with confidence</strong><small>Services for every celebration</small></div></div>
+      </div>
+    </section>
+
+    <section class="section" id="categories">
+      <div class="section-heading"><div><p class="eyebrow">EXPLORE SERVICES</p><h2>Find your perfect vendors</h2></div><a class="text-link" href="#vendors">View all vendors →</a></div>
+      <div class="category-grid">
+        <button class="category-card" data-category="Venues"><span>🏛️</span><strong>Venues</strong><small>Halls, resorts & gardens</small></button>
+        <button class="category-card" data-category="Photographers"><span>📸</span><strong>Photography</strong><small>Capture every moment</small></button>
+        <button class="category-card" data-category="Caterers"><span>🍽️</span><strong>Catering</strong><small>Memorable wedding menus</small></button>
+        <button class="category-card" data-category="Florists"><span>🌸</span><strong>Flowers & Decor</strong><small>Bring your theme to life</small></button>
+        <button class="category-card" data-category="Makeup Artists"><span>💄</span><strong>Makeup</strong><small>Look your best</small></button>
+        <button class="category-card" data-category="Planners"><span>🎊</span><strong>Planners & DJs</strong><small>Celebrate without stress</small></button>
+      </div>
+    </section>
+
+    <section class="section vendors-section" id="vendors">
+      <div class="section-heading"><div><p class="eyebrow">HANDPICKED FOR YOU</p><h2>Popular wedding vendors</h2><p class="muted">Browse sample listings and find a service that fits your plans.</p></div></div>
+      <div class="filters">
+        <input id="vendorSearch" type="search" placeholder="Search vendor or city...">
+        <select id="categoryFilter" aria-label="Filter category"><option value="All">All categories</option><option>Venues</option><option>Photographers</option><option>Caterers</option><option>Florists</option><option>Makeup Artists</option><option>Planners</option></select>
+        <select id="priceFilter" aria-label="Filter price"><option value="All">Any budget</option><option value="low">Under ₹50,000</option><option value="mid">₹50,000–₹1,00,000</option><option value="high">Above ₹1,00,000</option></select>
+        <select id="ratingFilter" aria-label="Filter rating"><option value="0">Any rating</option><option value="4.5">4.5+ stars</option><option value="4.8">4.8+ stars</option></select>
+      </div>
+      <div class="vendor-grid" id="vendorGrid" aria-live="polite"></div>
+      <p class="empty-state hidden" id="emptyState">No vendors match these filters. Try a different search.</p>
+    </section>
+
+    <section class="promo">
+      <div><p class="eyebrow">YOUR DAY, YOUR WAY</p><h2>Every little detail deserves a great team.</h2><p>Save your favourites, compare services and send a booking request in just a few clicks.</p></div>
+      <a href="#vendors" class="btn light">Explore vendors ↗</a>
+    </section>
+
+    <section class="section two-column" id="bookings">
+      <div><p class="eyebrow">YOUR PLANNING SPACE</p><h2>My booking requests</h2><p class="muted">Requests made in this demo are saved in your browser.</p></div>
+      <div class="booking-list" id="bookingList"><p class="muted">You haven't sent any booking requests yet.</p></div>
+    </section>
+
+    <section class="section dashboard-section" id="dashboard">
+      <div class="section-heading"><div><p class="eyebrow">AT A GLANCE</p><h2>Marketplace dashboard</h2></div><button class="btn outline" id="resetDemo">Reset demo data</button></div>
+      <div class="stats-grid">
+        <article class="stat-card"><span class="stat-icon">♙</span><small>Listed Vendors</small><strong id="statVendors">8</strong><p>Across service categories</p></article>
+        <article class="stat-card"><span class="stat-icon">♡</span><small>Saved Favourites</small><strong id="statFavourites">0</strong><p>Your shortlist</p></article>
+        <article class="stat-card"><span class="stat-icon">▣</span><small>Booking Requests</small><strong id="statBookings">0</strong><p>Requests created in this demo</p></article>
+        <article class="stat-card"><span class="stat-icon">★</span><small>Average Rating</small><strong id="statRating">4.8</strong><p>Sample vendor rating</p></article>
+      </div>
+      <div class="dashboard-panels">
+        <article class="panel"><h3>Vendor management</h3><p class="muted">Demo vendor directory with category and price filters.</p><button class="btn primary small" id="manageVendors">Manage listings</button></article>
+        <article class="panel"><h3>Booking management</h3><p class="muted">View requests, dates and selected packages in My Bookings.</p><a class="btn outline small" href="#bookings">View bookings</a></article>
+      </div>
+    </section>
+  </main>
+
+  <footer><a class="brand" href="#home"><span class="brand-icon">✦</span> Vendor<span>Hub</span></a><p>Wedding planning, made a little easier.</p><small>Internship project WD-MAT-005 · Demo data only · © 2026 VendorHub</small></footer>
+
+  <dialog id="vendorDialog" class="modal">
+    <button class="modal-close" id="closeVendorDialog" aria-label="Close">×</button>
+    <div id="vendorDialogContent"></div>
+  </dialog>
+  <dialog id="bookingDialog" class="modal booking-modal">
+    <button class="modal-close" id="closeBookingDialog" aria-label="Close">×</button>
+    <p class="eyebrow">MAKE AN ENQUIRY</p><h2>Request a booking</h2>
+    <form id="bookingForm">
+      <input type="hidden" id="bookingVendorId">
+      <label for="bookingName">Your name</label><input id="bookingName" required placeholder="Enter your name">
+      <label for="bookingDate">Event date</label><input id="bookingDate" type="date" required>
+      <label for="bookingPackage">Package</label><select id="bookingPackage" required><option value="Basic">Basic package</option><option value="Standard">Standard package</option><option value="Premium">Premium package</option></select>
+      <label for="bookingMessage">Message (optional)</label><textarea id="bookingMessage" rows="3" placeholder="Tell the vendor a little about your event"></textarea>
+      <button class="btn primary full" type="submit">Send booking request</button>
+    </form>
+    <p class="fine-print">Demo only: this request is stored locally and is not sent to a real vendor.</p>
+  </dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
